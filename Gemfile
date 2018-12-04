@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 gem 'activeadmin'
 
+gem 'kaminari'
+
 #Integration
 gem 'devise'
 gem 'carrierwave'
