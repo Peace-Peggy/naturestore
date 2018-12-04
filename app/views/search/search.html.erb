@@ -1,0 +1,10 @@
+<h1>Search Result</h1>
+<% if @products.nil? %>
+  <h2><%=@message%></h2>
+<% else %>
+  <%@products.each do |p|%>
+
+    <%= link_to p.name, new_product_path(:id => p.id)%>
+
+  <% end %>
+<% end %>

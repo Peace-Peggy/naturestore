@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <h2><%= link_to "Products",root_path%></h2>
+    <h3>Categories</h3>
+    <% categories = Category.all %>
+    <% categories.each do |c|%>
+    <p><%= link_to c.name , category_cat_path(:id => c.id)%></p>
+    <% end %>
+
+    <%= form_tag( search_search_path, method: "get") do %>
+    <%= text_field_tag(:search)%>
+    <%= collection_select(:cat,:category_id,Category.all.order(:name),:id,:name)%>
+    <%= submit_tag("Search")%>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

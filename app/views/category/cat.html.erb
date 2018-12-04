@@ -1,0 +1,7 @@
+<h1>Category - <%=@products.first.category.name%></h1>
+
+<%@products.each do |p|%>
+
+<%= link_to p.name, new_product_path(:id => p.id)%>
+
+<% end %>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'search/index'
+  get 'search/search'
+  get 'search/search'
+  get 'category/cat'
   get 'contact/index'
   get 'abouts/index'
   get 'order/index'
@@ -12,6 +16,18 @@ Rails.application.routes.draw do
   resources :products ,only:[:index,:new]
 
   root to: 'products#index'
+
+  resources :category do
+    collection do 
+      get 'results'
+    end
+  end
+
+  resources :search ,only:[:index] do 
+    collection do
+      get 'search'
+    end
+  end
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config
