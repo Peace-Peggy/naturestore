@@ -7,7 +7,7 @@ class SearchController < ApplicationController
       category = Category.find(params[:cat][:category_id])
       @products = category.products.where('name LIKE ?',"%#{params[:search]}%")
 
-      if @products.nil?
+      if @products.empty?
         @message = "No Product Found"
       end     
    else

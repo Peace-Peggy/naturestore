@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #devise_for :customers
   get 'search/index'
   get 'search/search'
   get 'search/search'
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   # get 'products/index'
   # get 'products/new'
   # get 'products/edit'
+
+  devise_for :customers , :controllers => {registrations: "registrations"}
 
   resources :products ,only:[:index,:new]
 

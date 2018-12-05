@@ -1,5 +1,5 @@
 <h1>Search Result</h1>
-<% if @products.nil? %>
+<% if @products.empty? %>
   <h2><%=@message%></h2>
 <% else %>
   <%@products.each do |p|%>
